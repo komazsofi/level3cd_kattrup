@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        #map {
+            width: 1524px;
+            height: 967px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/comb_forestwet_simpl_1.js"></script>
+        <script src="data/comb_forestdry_simpl_2.js"></script>
+        <script src="data/comb_forestwet_simpl2_3.js"></script>
+        <script src="data/comb_forestdry_simpl2_4.js"></script>
+        <script src="data/willowshrub_5.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[55.576201378072945,11.233259486062884],[55.65908390238112,11.457257852148574]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_Google_0');
+        map.getPane('pane_Google_0').style.zIndex = 400;
+        var layer_Google_0 = L.tileLayer('http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', {
+            pane: 'pane_Google_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_Google_0;
+        map.addLayer(layer_Google_0);
+        function pop_comb_forestwet_simpl_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? autolinker.link(feature.properties['DN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_comb_forestwet_simpl_1_0(feature) {
+            switch(String(feature.properties['DN'])) {
+                case '11':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(226,235,14,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,219,149,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '13':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,157,76,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,218,240,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(64,166,230,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '23':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(18,55,224,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '30':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(49,213,57,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '40':
+                    return {
+                pane: 'pane_comb_forestwet_simpl_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(62,113,78,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_comb_forestwet_simpl_1');
+        map.getPane('pane_comb_forestwet_simpl_1').style.zIndex = 401;
+        map.getPane('pane_comb_forestwet_simpl_1').style['mix-blend-mode'] = 'normal';
+        var layer_comb_forestwet_simpl_1 = new L.geoJson(json_comb_forestwet_simpl_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_comb_forestwet_simpl_1',
+            layerName: 'layer_comb_forestwet_simpl_1',
+            pane: 'pane_comb_forestwet_simpl_1',
+            onEachFeature: pop_comb_forestwet_simpl_1,
+            style: style_comb_forestwet_simpl_1_0,
+        });
+        bounds_group.addLayer(layer_comb_forestwet_simpl_1);
+        function pop_comb_forestdry_simpl_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? autolinker.link(feature.properties['DN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_comb_forestdry_simpl_2_0(feature) {
+            switch(String(feature.properties['DN'])) {
+                case '11':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(226,235,14,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(218,219,149,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '13':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,157,76,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(95,218,240,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(64,166,230,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '23':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(18,55,224,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '30':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(49,213,57,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '40':
+                    return {
+                pane: 'pane_comb_forestdry_simpl_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(62,113,78,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_comb_forestdry_simpl_2');
+        map.getPane('pane_comb_forestdry_simpl_2').style.zIndex = 402;
+        map.getPane('pane_comb_forestdry_simpl_2').style['mix-blend-mode'] = 'normal';
+        var layer_comb_forestdry_simpl_2 = new L.geoJson(json_comb_forestdry_simpl_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_comb_forestdry_simpl_2',
+            layerName: 'layer_comb_forestdry_simpl_2',
+            pane: 'pane_comb_forestdry_simpl_2',
+            onEachFeature: pop_comb_forestdry_simpl_2,
+            style: style_comb_forestdry_simpl_2_0,
+        });
+        bounds_group.addLayer(layer_comb_forestdry_simpl_2);
+        function pop_comb_forestwet_simpl2_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? autolinker.link(feature.properties['DN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_comb_forestwet_simpl2_3_0(feature) {
+            switch(String(feature.properties['DN'])) {
+                case '11':
+                    return {
+                pane: 'pane_comb_forestwet_simpl2_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(226,235,14,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_comb_forestwet_simpl2_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(147,152,45,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_comb_forestwet_simpl2_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(30,243,204,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_comb_forestwet_simpl2_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(11,148,202,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '30':
+                    return {
+                pane: 'pane_comb_forestwet_simpl2_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,222,71,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '40':
+                    return {
+                pane: 'pane_comb_forestwet_simpl2_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(62,113,78,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_comb_forestwet_simpl2_3');
+        map.getPane('pane_comb_forestwet_simpl2_3').style.zIndex = 403;
+        map.getPane('pane_comb_forestwet_simpl2_3').style['mix-blend-mode'] = 'normal';
+        var layer_comb_forestwet_simpl2_3 = new L.geoJson(json_comb_forestwet_simpl2_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_comb_forestwet_simpl2_3',
+            layerName: 'layer_comb_forestwet_simpl2_3',
+            pane: 'pane_comb_forestwet_simpl2_3',
+            onEachFeature: pop_comb_forestwet_simpl2_3,
+            style: style_comb_forestwet_simpl2_3_0,
+        });
+        bounds_group.addLayer(layer_comb_forestwet_simpl2_3);
+        function pop_comb_forestdry_simpl2_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? autolinker.link(feature.properties['DN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_comb_forestdry_simpl2_4_0(feature) {
+            switch(String(feature.properties['DN'])) {
+                case '11':
+                    return {
+                pane: 'pane_comb_forestdry_simpl2_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(226,235,14,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_comb_forestdry_simpl2_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(147,152,45,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_comb_forestdry_simpl2_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(30,243,204,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_comb_forestdry_simpl2_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(11,148,202,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '30':
+                    return {
+                pane: 'pane_comb_forestdry_simpl2_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(44,222,71,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '40':
+                    return {
+                pane: 'pane_comb_forestdry_simpl2_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(62,113,78,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_comb_forestdry_simpl2_4');
+        map.getPane('pane_comb_forestdry_simpl2_4').style.zIndex = 404;
+        map.getPane('pane_comb_forestdry_simpl2_4').style['mix-blend-mode'] = 'normal';
+        var layer_comb_forestdry_simpl2_4 = new L.geoJson(json_comb_forestdry_simpl2_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_comb_forestdry_simpl2_4',
+            layerName: 'layer_comb_forestdry_simpl2_4',
+            pane: 'pane_comb_forestdry_simpl2_4',
+            onEachFeature: pop_comb_forestdry_simpl2_4,
+            style: style_comb_forestdry_simpl2_4_0,
+        });
+        bounds_group.addLayer(layer_comb_forestdry_simpl2_4);
+        function pop_willowshrub_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_willowshrub_5_0() {
+            return {
+                pane: 'pane_willowshrub_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,113,141,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_willowshrub_5');
+        map.getPane('pane_willowshrub_5').style.zIndex = 405;
+        map.getPane('pane_willowshrub_5').style['mix-blend-mode'] = 'normal';
+        var layer_willowshrub_5 = new L.geoJson(json_willowshrub_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_willowshrub_5',
+            layerName: 'layer_willowshrub_5',
+            pane: 'pane_willowshrub_5',
+            onEachFeature: pop_willowshrub_5,
+            style: style_willowshrub_5_0,
+        });
+        bounds_group.addLayer(layer_willowshrub_5);
+        map.addLayer(layer_willowshrub_5);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/willowshrub_5.png" /> willowshrub': layer_willowshrub_5,'comb_forestdry_simpl2<br /><table><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl2_4_110.png" /></td><td>11</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl2_4_121.png" /></td><td>12</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl2_4_212.png" /></td><td>21</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl2_4_223.png" /></td><td>22</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl2_4_304.png" /></td><td>30</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl2_4_405.png" /></td><td>40</td></tr></table>': layer_comb_forestdry_simpl2_4,'comb_forestwet_simpl2<br /><table><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl2_3_110.png" /></td><td>11</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl2_3_121.png" /></td><td>12</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl2_3_212.png" /></td><td>21</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl2_3_223.png" /></td><td>22</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl2_3_304.png" /></td><td>30</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl2_3_405.png" /></td><td>40</td></tr></table>': layer_comb_forestwet_simpl2_3,'comb_forestdry_simpl<br /><table><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_110.png" /></td><td>11</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_121.png" /></td><td>12</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_132.png" /></td><td>13</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_213.png" /></td><td>21</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_224.png" /></td><td>22</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_235.png" /></td><td>23</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_306.png" /></td><td>30</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestdry_simpl_2_407.png" /></td><td>40</td></tr></table>': layer_comb_forestdry_simpl_2,'comb_forestwet_simpl<br /><table><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_110.png" /></td><td>11</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_121.png" /></td><td>12</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_132.png" /></td><td>13</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_213.png" /></td><td>21</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_224.png" /></td><td>22</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_235.png" /></td><td>23</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_306.png" /></td><td>30</td></tr><tr><td style="text-align: center;"><img src="legend/comb_forestwet_simpl_1_407.png" /></td><td>40</td></tr></table>': layer_comb_forestwet_simpl_1,"Google": layer_Google_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
